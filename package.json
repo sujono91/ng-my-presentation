@@ -8,7 +8,8 @@
     "test": "ng test",
     "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "protractor conf.js",
+    "e2e-local": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +45,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
-    "https-proxy-agent": "latest"
+    "https-proxy-agent": "latest",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "webdriver-manager": "^12.1.5"
   }
 }
