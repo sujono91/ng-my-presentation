@@ -3,7 +3,7 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
-
+console.log(process.env);
 /**
  * @type { import("protractor").Config }
  */
@@ -16,7 +16,7 @@ const config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: 'https://sujono91.github.io/ng-my-presentation/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
@@ -34,6 +34,9 @@ const config = {
 if (process.env.TRAVIS) {
   config.sauceUser = process.env.SAUCE_USERNAME;
   config.sauceKey = process.env.SAUCE_ACCESS_KEY;
+  config.sauceRegion = 'us';
+  config.seleniumAddress = 'https://ondemand.saucelabs.com/wd/hub';
+  config.SELENIUM_PROMISE_MANAGER = false;
   config.capabilities = {
     'browserName': 'chrome',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
