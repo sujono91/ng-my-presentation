@@ -4,6 +4,6 @@ describe('Protractor Demo', () => {
       await browser.get('https://sujono91.github.io/ng-my-presentation/');
       await browser.executeScript('sauce:context=Asserting "Ng MY Presentation" title is present');
       const title = await browser.getTitle();
-      expect(title).toEqual('NG-MY 2019 Presentation');
+      expect(title).toEqual('NgMyPresentation');
   });
 });
