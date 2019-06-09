@@ -12,3 +12,10 @@ script:
 - ng lint
 - npm run test-headless
 - ng build --prod
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/ng-my-presentation
+  on:
+    branch: master
