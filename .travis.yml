@@ -1,21 +1,28 @@
+addons:
+  sauce_connect: true
 language: node_js
 node_js:
-  - "10"
+- '10'
 dist: trusty
 sudo: required
 branches:
   only:
   - master
 before_script:
-  - npm install -g @angular/cli
+- npm install -g @angular/cli
 script:
 - ng lint
 - npm run test-headless
+- npm run e2e
 - ng build --prod --base-href https://sujono91.github.io/ng-my-presentation/
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token: "$GITHUB_TOKEN"
   local_dir: dist/ng-my-presentation
   on:
     branch: master
+env:
+  global:
+  - secure: nheZ3k38onyKQmw78J9XzcslThwHGJyi7fEvUSbFKZoviw4MszxzCAcKiYdmBUTnxVYc+nRamlN3T9kt8rAOGMk33H/dA3e5fM3u2I0QOYmnTbgSgRGjTilOVGfWjx1VHonM8C5u5C2hXu8yYEnB+Ge5lJfrrh4riETODPSU5G8+Ps3YqXWYxaPD+maS39hrenRpCkFPmOZYylGf2Ny8CBNuyWuhIbOsbE/UC5wAemsyDy5ick250fh4qOq+/k3f8JMAqrjbuI+4i5UsYmCSPZUrespeXMu7Kqu5+22Mqy2Td7h9V25gbXoKg1C4uAg4yTV/OrzGZUAl+GF1T7S0SFQ4QhPkOtRVZ1h4HZp0+jv+UU6fEDT341KKMfm3y/4tz9wZNmoeY3jF0PT2lb7oRVjRBhnrhc6xpyTtsEa4+OsEr1c1R0PgEEOAwvFZz1kLe42Wy8fGSrXCnZxXFMEnExNR5M8Cg3RRn19tUDqBwmsJdIdLrlHaMaWFz5bi3Z09kTZUs68vWewKhRBle0j6heo/jwjMy6Jns4UdTqhzFLv59vaRiG5AjjBHhJEZQoaOpX1Tj/ZwazksGFamLid739zogeRl+TQq1NKcGIhepqZPqJDiVxE8Sikm+6fwnMFnmdywkmf+ZN7JwREBmrrLWq8FwbR8NSVGAOmgQD6ugkU=
+  - secure: GA98DUT2EHqb6ynP+8asH897dnJZikRR5sql6gqGR9DfeNyHd6cYxlyKr9Vx1fRW1ijya8UaEmFOU7AKa0+lAJTHtvQhHtpBrVwZ9QcsjZfiTV9a4WrntcCu3ME8Jzso9vXzSz8EYwTarbH+HsLB2y8Yo/CeGtjUOCQnGsaV67zodoKjoMErWeBxYjdwXDkG2WaJJ0VuMO43peFMcB2aicR0ytamrtx6ydPrPCXDVJ4622LCsqjS2WmZy3W0IjlkOYt176d9xreTlOAzKeGtIbR/CYiSxX+TqiPwLvxgBYdDdtvcKXFp8yqtSLsuJpkhPHnbWxmhZQTT0jw9Mu0jAqMqTmLkDQPcDDFUAWBjbYq/YmeLuVX7grdOLlWVIF9l13N/oHL4yql49sL3AAQOfUbAJi44sqMLtvW1fxkrRRTUuuK7/Y0j1uwbGpGRPAXmxhjHt/hcc0W247JuHC9Lxy3JudxJZUiFeGQ+cIpC6ie5x3+Xx55FRUtKe2X+EDHC6jA1M64u1x7QUaHjUhgjCsmcU+5rJwdj9DtKSJeyEoR934WZjbg25Dc438Lbe0GvX2ATYviIFBjwP32Sl05WK41+6eLesSudEz4wphr1+MpyREaHZjo57mN+oyjlAAnDA9vJqzQ/eder9NRWe9dxco/ziDNoWZjyhepEA2hSaRY=
