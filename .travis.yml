@@ -13,8 +13,8 @@ before_script:
 - npm install -g @angular/cli
 script:
 - ng lint
-- npm run test-headless
-- ng build --prod --base-href https://sujono91.github.io/ng-my-presentation/
+- ng test --watch=false --browsers=ChromeHeadless
+- ng build --prod
 - npm run e2e
 deploy:
   provider: pages
