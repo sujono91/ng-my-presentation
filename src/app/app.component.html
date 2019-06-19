@@ -1,5 +1,5 @@
 <div class="col-6" style="margin: auto;">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="text-center border border-light p-5">
+  <form #f="ngForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
     <p class="h4 mb-4">Sign in</p>
     <input type="text" name="username" class="form-control mb-4" [(ngModel)]="user.userName" placeholder="Username" required>
     <input type="password" name="password" class="form-control mb-4" [(ngModel)]="user.password" placeholder="Password" required>
