@@ -1,6 +1,6 @@
 const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 exports.config = {
-    allScriptsTimeout: 30000,
+    allScriptsTimeout: 60000,
     sauceUser: 'sujono91',
     sauceKey: 'c96cd7c4-95c3-4572-87da-c62bd8bd5eab',
     sauceRegion: 'us',
