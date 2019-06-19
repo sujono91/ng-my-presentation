@@ -1,6 +1,6 @@
 describe('Protractor Demo', () => {
-  const userName = element(by.model('user.userName'));
-  const password = element(by.model('user.password'));
+  const userName = element(by.name('username'));
+  const password = element(by.name('password'));
   const submitBtn = element(by.id('submitBtn'));
   const resultText = element(by.id('result'))
 
