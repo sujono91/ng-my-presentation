@@ -12,5 +12,6 @@ describe('Protractor Demo', () => {
       password.sendKeys('sjbluejack12');
       submitBtn.click();
       expect(resultText.getText()).toEqual('Valid: true');
+      await browser.executeScript('sauce:context=Asserting "Valid: true" is present');
   });
 });
