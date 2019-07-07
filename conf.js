@@ -13,8 +13,8 @@ exports.config = {
         platform: 'Windows 10',
         name: 'chrome-protractor-test',
         build: 'Sample Protractor Tests',
-        username: 'sujono91',
-        accessKey: 'c96cd7c4-95c3-4572-87da-c62bd8bd5eab',
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY,
         shardTestFiles: true,
         maxInstances: 25
     },{
@@ -23,27 +23,11 @@ exports.config = {
         platform: 'Windows 10',
         name: 'firefox-protractor-test',
         build: 'Sample Protractor Tests',
-        username: 'sujono91',
-        accessKey: 'c96cd7c4-95c3-4572-87da-c62bd8bd5eab',
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY,
         shardTestFiles: true,
         maxInstances: 25
     }],
-
-    /**
-     * The below version should work for the upcoming Selenium 4 release and w3c protocol,
-     * although currently the protractor webdriver manager can't resolve 'sauce:options'
-     --------------------------------------------------------------------------------
-
-     browserName: 'chrome',
-     browserVersion: 'latest',
-     platformVersion: 'Windows 10',
-     'sauce:options': {
-            username: process.env.SAUCE_USERNAME,
-            accessKey: process.env.SAUCE_ACCESS_KEY,
-            name: 'chrome-protractor-test',
-            build: 'Sample Protractor Tests',
-            seleniumVersion: '3.141.59'
-        },*/
 
     baseUrl: 'https://sujono91.github.io/ng-my-presentation/',
 
@@ -66,6 +50,5 @@ exports.config = {
             console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
             };
         printSessionId("Insert Job Name Here");
-        //await browser.executeScript("sauce:job-result=" + (SpecReporter.valueOf().result());
     },
 };
