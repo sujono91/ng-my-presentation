@@ -14,8 +14,8 @@ before_script:
 script:
 - ng lint
 - ng test --watch=false --browsers=ChromeHeadless
-- npm run e2e
-- npm run build
+- protractor conf.js
+- ng build --prod --base-href 'https://sujono91.github.io/ng-my-presentation/'
 deploy:
   provider: pages
   skip_cleanup: true
